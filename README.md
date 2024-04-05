@@ -1,6 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<h1><p align="center">
+  <img src="https://files.catbox.moe/vmmbhb.png"  width="200" alt="logo"/>
+</p></h1>
+
+[![ReactJS](https://img.shields.io/badge/ReactJs-100000?style=for-the-badge&logo=React&logoColor=11CFFE&labelColor=F4F4F4&color=11CFFE)](https://react.dev/)
+[![MongoDb](https://img.shields.io/badge/mongoDB-100000?style=for-the-badge&logo=MongoDb&logoColor=0A7D0B&labelColor=28E719&color=105800)](https://www.mongodb.com/)
+[![Auth0](https://img.shields.io/badge/Autho-100000?style=for-the-badge&logo=Auth0&logoColor=white&labelColor=black&color=white)](https://auth0.com/)
+[![ChakraUI](https://img.shields.io/badge/chakraui-100000?style=for-the-badge&logo=ChakraUI&logoColor=6AEBC1&labelColor=F4F4F4&color=black)](https://chakra-ui.com/)
+<!-- [![ShadCDN](https://img.shields.io/badge/Shadcdn-100000?style=for-the-badge&logo=ShadCDN&logoColor=white&labelColor=black&color=black)](https://ui.shadcn.com/) -->
+
+**Table of Contents:** 
+<ol>
+    <li>Installation guide
+    <li>Purpose
+    <li>Features
+    <li>Demo
+    <li>Team
+</ol>
+
+**Installation Guide:**
 
 First, run the development server:
 
@@ -16,21 +34,30 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**Purpose**: 
+- AnonymousAID is a our solution to reduce the threat to life and safety of whistle-blowers across India. We assure complete anonymity of the whistleblower, and thus increase their safety. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+**Features**: 
+- WhistleBlower KYC through DID authentication
+- Authorities approved through administration
+- Report incidents in complete detail and upload proof
+- Appeal incidents and see status of the reports filed. 
+- As reports get verified by authorities, their incident level increases, and priority to those incidents is given.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Flow of app**: 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="250" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxRWgmV99c06uRx4BjymEd5%2FUntitled%3Ftype%3Dwhiteboard%26node-id%3D1%253A123%26t%3DQXJWAHRv12Jwn9kP-1" allowfullscreen></iframe>
 
-## Deploy on Vercel
+**Demo**: 
+- url to youtube
+- pictures
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+**Team**: 
+- [Ketan Baitule](https://www.linkedin.com/in/ketanbaitule/)
+- [Gaurav Bijwe](https://www.linkedin.com/in/gaurav-bijwe-a37a0924b/)
+- [Tejas Keshwani](https://www.linkedin.com/in/tejas-keshwani-84aaa326a/)
+- [Rajyavardhan](https://www.linkedin.com/in/vaddineni-rajyavardhan-736654201/)
