@@ -43,7 +43,7 @@ function MyTable() {
             <Th>Status</Th>
           </Tr>
         </Thead>
-        <Tbody>
+        <Tbody className="text-center">
           {tableData.map((data, index) => (
             <Tr key={index}>
               <Td>{data.Id}</Td>

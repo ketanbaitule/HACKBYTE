@@ -6,7 +6,7 @@ import {
   FormHelperText,
   FormErrorMessage,
 } from "@chakra-ui/react";
-import Form from "../Form";
+import Form from "./Form";
 
 
 export default function New () {
@@ -16,7 +16,6 @@ export default function New () {
   };
   return (
     <div>
-      New
       <form action={handleSubmit}>
         <Form />
       </form>

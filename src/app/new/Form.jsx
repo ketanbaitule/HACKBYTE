@@ -42,7 +42,7 @@ function Form() {
         )}
         <FormLabel as="legend">Describe Incident</FormLabel>
         <Textarea placeholder="Describe Incident" name="description" />
-        <Button type="submit" colorScheme="blue">
+        <Button type="submit" colorScheme="blue" className="mt-2">
           Add
         </Button>
       </FormControl>
