@@ -48,8 +48,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 **Flow of app**: 
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="250" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxRWgmV99c06uRx4BjymEd5%2FUntitled%3Ftype%3Dwhiteboard%26node-id%3D1%253A123%26t%3DQXJWAHRv12Jwn9kP-1" allowfullscreen></iframe>
-
 **Demo**: 
 - url to youtube
 - pictures
