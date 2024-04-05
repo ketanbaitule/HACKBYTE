@@ -18,7 +18,7 @@ import {
   Button,
   Textarea,
 } from "@chakra-ui/react";
-
+import Navbar from "../Navbar";
 function Form() {
   const [input, setInput] = useState("");
 
@@ -27,7 +27,8 @@ function Form() {
   const isError = input === "";
 
   return (
-     <>
+    <>
+      <Navbar status="sign out" />
       <FormControl isInvalid={isError}>
         <FormLabel>Title</FormLabel>
         <Input type="text" value={input} onChange={handleInputChange} />
