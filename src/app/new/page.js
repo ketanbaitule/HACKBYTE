@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./Form";
 import { clientPromise } from "@/utils/mongodb";
-
+import { redirect } from "next/navigation";
 
 export default function New () {
   const addIncident = async (formData) => {
@@ -33,6 +33,8 @@ export default function New () {
     }catch(e){
       console.log(e)
     }
+
+    redirect("/dashboard")
 
   };
   return (

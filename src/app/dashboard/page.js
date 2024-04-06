@@ -1,8 +1,12 @@
 import Link from "next/link";
 import React from "react";
-import MyTable from "./Table";
-import { Heading, Button } from "@chakra-ui/react";
-export default function Home() {
+import IncidentTable from "./IncidentTable";
+import { Heading, Button } from "@/utils/chakraui";
+import { clientPromise } from "@/utils/mongodb";
+export default async function Home() {
+  const client = await clientPromise;
+  const incidentCollection = client.db("whistleblower").collection("incidents");
+  const incidentsData = await incidentCollection.find({}).toArray();
   return (
     <main>
       <Heading className="text-dark">My Dashboard</Heading>
@@ -11,7 +15,7 @@ export default function Home() {
         <Link href="/new">Report Incident</Link>
       </Button>
 
-      <MyTable />
+      <IncidentTable incidents={incidentsData} />
     </main>
   );
 }
