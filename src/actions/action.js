@@ -48,14 +48,14 @@ export async function sendBack(id, textArea){
 
 }
 
-export async function addDiscussion(id, textArea){
+export async function addDiscussion(id, textArea, type){
     try {
         const client = await clientPromise;
         const incidentCollection =await client.db("whistleblower").collection("incidents");
         await incidentCollection.updateOne(
             { _id: new ObjectId(id) },
             { 
-                $push: { "description": { "from": "user", "type": "markdown", "data": textArea} },
+                $push: { "description": { "from": "user", "type": type, "data": textArea} },
                 $set: { "authority.status": "Pending" }
             })
     } catch (error) {

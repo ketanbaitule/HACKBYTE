@@ -16,6 +16,8 @@ import {
 } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
+import { useEdgeStore } from '@/lib/edgestore';
+ 
 function AddModal({
   id,
   modalDisclosure,
@@ -23,19 +25,39 @@ function AddModal({
   title,
   textAreaLabel,
   textAreaDescription,
-}) {
-  const { isOpen, onOpen, onClose } = modalDisclosure;
-  const [loading, setLoading] = useState(false);
-  const [textArea, setTextArea] = useState("");
-  const [value, setValue] = useState("markdown");
+}){
+    const { isOpen, onOpen, onClose } = modalDisclosure;
+    const [loading, setLoading] = useState(false);
+    const [textArea, setTextArea] = useState("");
+    const [value, setValue] = useState("markdown");
 
-  const submitForm = async () => {
-    setLoading(true);
-    await action(id, textArea);
-    onClose();
-    setLoading(false);
-    setTextArea("");
-  };
+    const { edgestore } = useEdgeStore();
+
+    const [file, setFile] = useState();
+
+    const submitForm = async () => {
+        setLoading(true);
+        let newTextArea = textArea;
+        if(value == "document"){
+            if (file) {
+                const res = await edgestore.publicFiles.upload({
+                    file,
+                    onProgressChange: (progress) => {
+                        // you can use this to show a progress bar
+                        console.log(progress);
+                    }});
+                console.log("res", res, res.url)
+                newTextArea = res.url.toString();
+                setTextArea(newTextArea);
+                console.log("Inside:", newTextArea);
+            }
+        }
+        console.log("Outside", newTextArea)
+        await action(id, newTextArea, value);
+        onClose();
+        setLoading(false);
+        setTextArea("");
+    };
 
 
   return (
@@ -63,9 +85,14 @@ function AddModal({
               </FormControl>
             ) : (
               <FormControl>
-                <Input placeholder="upload files" size="sl" type="file" />
+                <Input
+                    onChange={(e) => setFile(e.target.files[0])}
+                    placeholder="upload files"
+                    size="sl"
+                    type="file" />
               </FormControl>
-            )}
+            )
+        }
           </ModalBody>
 
           <ModalFooter>
@@ -84,7 +111,7 @@ function AddModal({
         </ModalContent>
       </Modal>
     </>
-  );
+    );
 }
 
 export default AddModal;

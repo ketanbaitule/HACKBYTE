@@ -14,7 +14,7 @@ export default async function Home() {
 
   const client = await clientPromise;
   const incidentCollection = client.db("whistleblower").collection("incidents");
-  const incidentsData = await incidentCollection.find({}).toArray();
+  const incidentsData = await incidentCollection.find({  }).toArray();
   return (
     <main>
       <Heading className="text-dark">My Dashboard</Heading>
