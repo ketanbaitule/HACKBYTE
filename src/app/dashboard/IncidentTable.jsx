@@ -1,3 +1,4 @@
+"use client";
 import {
   TableContainer,
   Table,
@@ -7,6 +8,9 @@ import {
   Th,
   Td,
 } from "@/utils/chakraui";
+import Link from "next/link";
+
+
 
 function IncidentTable({ incidents }) {
 
@@ -23,7 +27,7 @@ function IncidentTable({ incidents }) {
         <Tbody className="text-center">
           {incidents.map((incident) => (
             <Tr key={incident["_id"]}>
-              <Td>{incident["_id"]}</Td>
+              <Td> <Link href={`/dashboard/incident/${incident._id}`}>{incident["_id"]}</Link></Td>
               <Td>{incident.title}</Td>
               <Td>{incident.authority.status}</Td>
             </Tr>
