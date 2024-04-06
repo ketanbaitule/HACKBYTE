@@ -46,7 +46,7 @@ async function Navbar() {
                 {
                   user? 
                   <>
-                    <li className="text-white">
+                    <li className="block py-2 px-3 rounded text-white">
                       {user?.user.nickname}
                     </li>
                     <Link
