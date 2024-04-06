@@ -2,11 +2,14 @@ import React from "react";
 import Form from "./Form";
 import { clientPromise } from "@/utils/mongodb";
 import { redirect } from "next/navigation";
+import { getSession } from "@auth0/nextjs-auth0";
 
 export default function New () {
   const addIncident = async (formData) => {
     "use server"
     try{
+      const user = await getSession();
+
       const client = await clientPromise;
       const db = await client.db("whistleblower");
 

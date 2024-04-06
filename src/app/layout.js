@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className="bg-light">
         <ChakraProvider>
           <Navbar />
-          <div className="px-2 mt-2">
+          <div className="px-2 mt-2 min-h-screen">
             {children}
           </div>
         </ChakraProvider>
