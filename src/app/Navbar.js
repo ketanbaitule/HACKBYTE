@@ -3,7 +3,6 @@ import { getSession } from '@auth0/nextjs-auth0';
 
 async function Navbar() {
     const user = await getSession();
-    console.log(JSON.stringify(user))
     return (
       <>
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
