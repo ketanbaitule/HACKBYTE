@@ -16,11 +16,12 @@ import {
 } from "@chakra-ui/react";
 import AddModal from "./AddModal";
 import { useState } from "react";
-import { addProgress, markSolved, sendBack } from "@/actions/action";
+import { addDiscussion, addProgress, markSolved, sendBack } from "@/actions/action";
 export default function IncidentDetail({incident}){
     const modalDisclosure = useDisclosure();
     const [textArea, setTextArea] = useState({label: "", description: "", action: null});
     if(!incident) return null;
+    incident = JSON.parse(incident);
     const isPending = (incident.authority.status.toLowerCase().trim() != "solved");
     
     return(
@@ -64,7 +65,7 @@ export default function IncidentDetail({incident}){
                 <Box p={6}>
                     <ButtonGroup isDisabled={!isPending} variant='outline' spacing='6'>
                         
-                        <Button onClick={()=>{setTextArea({title: "Add Progress", label: "Add Progress", description: "Add Action Taken...", action: addProgress}) ;modalDisclosure.onOpen()}} colorScheme='blue'>Discussion</Button>
+                        <Button onClick={()=>{setTextArea({title: "Add Discussion", label: "Add Details / Reply", description: "Add More Details...", action: addDiscussion}) ;modalDisclosure.onOpen()}} colorScheme='blue'>Discussion</Button>
                         
                     </ButtonGroup>
                 </Box>

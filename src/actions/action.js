@@ -34,13 +34,30 @@ export async function sendBack(id, textArea){
     try {
         const client = await clientPromise;
         const incidentCollection =await client.db("whistleblower").collection("incidents");
-        let t= await incidentCollection.updateOne(
+        await incidentCollection.updateOne(
             { _id: new ObjectId(id) },
             { 
                 $push: { "description": { "from": "authority", "type": "markdown", "data": textArea} },
                 $set: { "authority.status": "Send Back" }
             }
         );
+    } catch (error) {
+        console.error("Error in sendBack: ", error);
+        throw error;
+    }
+
+}
+
+export async function addDiscussion(id, textArea){
+    try {
+        const client = await clientPromise;
+        const incidentCollection =await client.db("whistleblower").collection("incidents");
+        await incidentCollection.updateOne(
+            { _id: new ObjectId(id) },
+            { 
+                $push: { "description": { "from": "user", "type": "markdown", "data": textArea} },
+                $set: { "authority.status": "Pending" }
+            })
     } catch (error) {
         console.error("Error in sendBack: ", error);
         throw error;
