@@ -41,7 +41,7 @@ export default function TempAdmin({authority, incidents}){
                   <Badge
                     borderRadius="full"
                     px="2"
-                    colorScheme={data.status.toLowerCase().trim() === "pending" ? "gray" : (data.status.toLowerCase().trim() === "solved" ? "green": "orange")}
+                    colorScheme={data.authority.status.toLowerCase().trim() === "pending" ? "gray" : (data.authority.status.toLowerCase().trim() === "solved" ? "green": "orange")}
                   >
                     {data.authority.status}
                   </Badge>

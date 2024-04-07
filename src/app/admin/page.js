@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 export default async function Admin() {
   const user = await getSession();
-  if(!user.user["https://hackbyte/roles"].includes("authority")){
+  if(!user?.user["https://hackbyte/roles"].includes("authority")){
     redirect("/dashboard")
   }
 
