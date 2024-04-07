@@ -17,6 +17,7 @@ export default function New () {
 
       const incident = {
         "title": formData.get("title"),
+        "userId": btoa(await user.user.nickname),
         "authority": {
           "name": formData.get("authority_name"),
           "status": "Pending",

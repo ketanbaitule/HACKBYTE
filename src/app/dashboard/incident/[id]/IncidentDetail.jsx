@@ -12,7 +12,8 @@ import {
     Tr,
     Th,
     Td,
-    useDisclosure
+    useDisclosure,
+    Badge
 } from "@chakra-ui/react";
 import AddModal from "./AddModal";
 import { useState } from "react";
@@ -39,6 +40,20 @@ export default function IncidentDetail({incident}){
                             <Td>{incident.authority.name}</Td>
                         </Tr>
                         <Tr>
+                            <Th>Status</Th>
+                            <Td>
+                                <Box display="flex" alignItems="baseline">
+                                    <Badge
+                                        borderRadius="full"
+                                        px="2"
+                                        colorScheme={incident.authority.status.toLowerCase().trim() === "pending" ? "gray" : (incident.authority.status.toLowerCase().trim() === "solved" ? "green": "orange")}
+                                    >
+                                        {incident.authority.status}
+                                    </Badge>
+                                </Box>
+                            </Td>
+                        </Tr>
+                        <Tr>
                             <Th>Progress</Th>
                             <Td>
                                 <OrderedList>
@@ -49,7 +64,7 @@ export default function IncidentDetail({incident}){
                             </Td>
                         </Tr>
                         <Tr>
-                            <Th>Description</Th>
+                            <Th>Conversation</Th>
                             <Td>
                                 <Table>
                                     {incident.description.map((description, index) => (

@@ -48,7 +48,7 @@ export default function IncidentDetail({incident}){
                             </Td>
                         </Tr>
                         <Tr>
-                            <Th>Description</Th>
+                            <Th>Conversation</Th>
                             <Td>
                                 <Table>
                                     {incident.description.map((description, index) => (
