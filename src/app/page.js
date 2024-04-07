@@ -4,7 +4,7 @@ import {
 } from "@chakra-ui/react";
 import { getSession } from "@auth0/nextjs-auth0";
 import { redirect } from "next/navigation";
-import NotLoggedIn from "./NotLoggedIn";
+
 
 export default async function Home() {
   const user = await getSession();
@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <main>
-      <NotLoggedIn />
+      <Heading className="text-dark">Not Logged In </Heading>
     </main>
   );
 }
